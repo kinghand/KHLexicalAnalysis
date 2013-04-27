@@ -8,9 +8,11 @@
 namespace KH{
 
 	//DFA_Range ÉùÃ÷
-	KH::DFARange dMinus(KH::aMinus),	dPlus(KH::aPlus),	dTimes(KH::aTimes),		dSlash(KH::aSlash),
-				 dLParen(KH::aLParen),
-				 dRParen(KH::aRParen),
+	KH::DFARange dMinus(KH::aMinus),	dPlus(KH::aPlus),		dTimes(KH::aTimes),		dSlash(KH::aSlash),
+				 dLParen(KH::aLParen),	dRParen(KH::aRParen),	dLAngle(KH::aLAngle),	dRAngle(KH::aRAngle),
+				 dLBigParen(KH::aLBigParen),					dRBigParen(KH::aRBigParen),
+				 dLSquareParen(KH::aLSquareParen),				dRSquareParen(KH::aRSquareParen),
+				 dExclamation(KH::aExclamation),
 				 dPeriod(KH::aPeriod),
 				 dComma(KH::aComma),
 				 dColon(KH::aColon),

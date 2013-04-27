@@ -226,36 +226,11 @@ int main(int argc, char *argv[])
 
 		.AddTair(KH::LexicalAnalysis::TYPEDEF::_INT,	KH::dInt)
 		.AddTair(KH::LexicalAnalysis::TYPEDEF::_FLOAT,	KH::dFloat)
+
+
 		//.AddTair(KH::LexicalAnalysis::TYPEDEF::_AND,dASD)
 				;
-	/*KH::LexicalAnalysis::TAIR	tairBlock(KH::LexicalAnalysis::TYPEDEF::_BLOCK,dBlock),
-								tairWord(KH::LexicalAnalysis::TYPEDEF::_IDENTIFIER,dIdentifier),
-								tairString(KH::LexicalAnalysis::TYPEDEF::_STRING,dString),
-								tairAnnotation(KH::LexicalAnalysis::TYPEDEF::_ANNOTATION,dAnnotation),
 
-								tairMinus(KH::LexicalAnalysis::TYPEDEF::_MINUS,dMinus), 
-								tairPlus(KH::LexicalAnalysis::TYPEDEF::_PLUS,dPlus),
-								tairTimes(KH::LexicalAnalysis::TYPEDEF::_TIMES,dTimes),
-								tairSlash(KH::LexicalAnalysis::TYPEDEF::_SLASH,dSlash),
-								tairPeriod(KH::LexicalAnalysis::TYPEDEF::_PERIOD,dPeriod),
-								tairComma(KH::LexicalAnalysis::TYPEDEF::_COMMA,dComma),
-
-								tairLParen(KH::LexicalAnalysis::TYPEDEF::_LPAREN,dLParen),
-								tairRParen(KH::LexicalAnalysis::TYPEDEF::_RPAREN,dRParen),
-
-								tairQuote(KH::LexicalAnalysis::TYPEDEF::_QUOTE,dQuote),
-								tairEqual(KH::LexicalAnalysis::TYPEDEF::_EQUAL,dEqual),
-								tairIdencital(KH::LexicalAnalysis::TYPEDEF::_IDENCITAL,dIdencital),
-								tairAssign(KH::LexicalAnalysis::TYPEDEF::_ASSIGN,dAssign),
-								tairAssignNorm(KH::LexicalAnalysis::TYPEDEF::_ASSIGN,dAssignNorm),
-
-								tairFloat(KH::LexicalAnalysis::TYPEDEF::_FLOAT,dFloat), 
-								tairInt(KH::LexicalAnalysis::TYPEDEF::_INT,dInt);
-								
-
-	lav.GetLA()<<tairWord<<tairMinus<<tairPlus<<tairTimes<<tairSlash<<tairLParen<<tairRParen<<tairQuote<<tairEqual<<tairPeriod
-			   <<tairComma<<tairIdencital<<tairAssign<<tairAssignNorm<<tairFloat<<tairInt<<tairBlock<<tairString
-			   <<tairAnnotation;*/
 	
 
 	glutInit(&argc, argv);

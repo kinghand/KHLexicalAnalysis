@@ -132,11 +132,18 @@ namespace KH{
 	RangeAdapter aBackSlash('\\');
 	RangeAdapter aLParen('(');
 	RangeAdapter aRParen(')');
+	RangeAdapter aLSquareParen('[');
+	RangeAdapter aRSquareParen(']');
+	RangeAdapter aLBigParen('{');
+	RangeAdapter aRBigParen('}');
+	RangeAdapter aLAngle('<');
+	RangeAdapter aRAngle('>');
 	RangeAdapter aEqual('=');
 	RangeAdapter aComma(',');
 	RangeAdapter aPeriod('.');
 	RangeAdapter aColon(':');
 	RangeAdapter aSemicolon(';');
+	RangeAdapter aExclamation('!');
 	RangeAdapter aUnderline('_');
 	RangeAdapter aQuote('"');
 	RangeAdapter aSharp('#');
