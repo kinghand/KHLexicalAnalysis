@@ -46,7 +46,7 @@ namespace KH{
 
 			dEqual	.AddTransition(0,1,1,KH::aEqual)	.AddTransition(1,2,1,KH::aEqual);
 
-			dIdencital.AddTransition(0,1,1,KH::aEqual)	.AddTransition(1,2,1,KH::aEqual);
+			dIdencital.AddTransition(0,1,1,KH::aEqual)	.AddTransition(1,2,1,KH::aEqual) .AddTransition(2,3,1,KH::aEqual);
 
 			dAssign	.AddTransition(0,1,1,KH::aColon)	.AddTransition(1,2,1,KH::aEqual);
 

@@ -6,7 +6,7 @@
 #include "KH_TextList.h"
 #include "DFAM_Range.h"
 #include "LA_View.h"
-
+#include "GrammarAnalysis.h"
 
 GLvoid init(GLvoid)
 {

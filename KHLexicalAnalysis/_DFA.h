@@ -146,6 +146,10 @@ namespace KH{
 			return pCurrentState == NULL;
 		}
 
+		int CheckStateNum() const{
+			return pStates->size();
+		}
+
 		_State* GetCurrentState() const {
 			return pCurrentState;
 		}

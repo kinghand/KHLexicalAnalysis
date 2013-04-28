@@ -27,7 +27,7 @@ namespace KH{
 			InitialColorDef();
 		}
 
-		int ShowLine(std::string str, int x, int y, Colorf offset){
+		int ShowLine(std::string str, int x, int y, Colorf offset){ //着色并显示一行
 			LexicalAnalysis::Token tk;
 			int length = 0;
 			while(!str.empty()) {
@@ -45,10 +45,10 @@ namespace KH{
 					td.RasterPos( x + length , y );
 					td<<tk.GetValue();
 
-					if(tk.GetSign() != LexicalAnalysis::TYPEDEF::_BLOCK && _VIEW_SHOWDETAIL)
+					if(tk.GetSign() != LexicalAnalysis::TYPEDEF::_BLOCK && _VIEW_SHOWDETAIL) //控制台调试
 						std::cout<<std::setw(30)<<tk.GetValue()<<std::setw(15)<< LexicalAnalysis::TYPEDEF::GetTypeString(tk.GetSign())<<std::endl;
 
-					length += td.GetTextLength(tk.GetValue());
+					length += td.GetTextLength(tk.GetValue()); //画刷右移
 					//std::cout<<tk.GetValue()<<' ';
 					/*td.RasterPos( 100 + length , y );
 					td<<LexicalAnalysis::TYPEDEF::GetTypeString(tk.GetSign());*/

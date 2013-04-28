@@ -2,81 +2,13 @@
 #ifndef _DFA_LEXICAL_ANALYSIS
 #define _DFA_LEXICAL_ANALYSIS
 
+#include"TokenAnalysis.h"
 #include"DFAMachine.h"
 #include"LexicalAnalysisDefine.h"
 #include"string"
 #include<stdarg.h>
 
 namespace KH{
-
-	template <class _ValueType = std::string, class _SignType = std::int> 
-	class _Token {
-	public:
-		typedef _SignType SignType;
-		typedef _ValueType ValueType;
-
-		//define 
-		static const _SignType DefSign = 0; 
-		static const _Token DefToken;
-
-		//set
-		_Token() { sign = DefSign;}
-		_Token(_ValueType v, _SignType s) {
-			SetToken(v, s);
-		}
-		void SetToken(_ValueType v, _SignType s) {
-			sign = s;
-			value = v;
-		}
-
-		//get
-		_ValueType GetValue() const { return value; }
-		_SignType GetSign() const { return sign; }
-
-		bool operator==(_Token t) { 
-			if(sign == t.GetSign() && value == t.GetValue() )	return true; 
-			else return false;
-		}
-
-		bool IsSign0() { //为空时
-			return sign == _Token::DefSign;
-		}
-
-		bool IsDefined() { //是否有定义
-			return LEXICAL_ANALYSIS_DEFINE::IsTypeDefined(sign);
-		}
-	private:
-		_SignType sign;
-		_ValueType value;
-	};
-
-	template<class _SignType = int, class _DFAMachine = KH::DFARange>
-	class TokenAnalysis {
-	public:
-		typedef _SignType SignType;
-		typedef _DFAMachine DFAMachine;
-
-		TokenAnalysis() { ; }
-		TokenAnalysis(_SignType st, _DFAMachine &d) {
-			pDFAM = &d;
-			sign = st;
-		}
-
-		//push
-		void SetMachine(_DFAMachine &d) { pDFAM = &d; }
-		void SetSign(_SignType st) { sign = st; }
-		//pop
-		_SignType GetSign() { return sign; }
-		_DFAMachine* GetPMachine() { return pDFAM; }
-
-		/*~TokenAnalysis(){
-			free(pDFAM);
-		}*/
-
-	private:
-		_DFAMachine* pDFAM; //!!!!!!!!!!!!
-		_SignType sign;
-	};
 
 	class LexicalAnalysis { //分析机
 	public:
@@ -92,7 +24,7 @@ namespace KH{
 		}
 
 		//Set
-		friend LexicalAnalysis& operator<<(LexicalAnalysis& la, TAIR ta) {
+		friend LexicalAnalysis& operator<<(LexicalAnalysis& la, TAIR ta) {  //插入TAIR
 			la.GetTAIRList()->push_back(ta);
 			return la;
 		}
@@ -107,14 +39,14 @@ namespace KH{
 			return &VTAIR;
 		}
 
-		Token GetAToken( std::string &strInput) {//获取token后将
+		Token GetAToken( std::string &strInput) {//获取token后将识别出的串从输入中剔除
 			std::string::iterator it = strInput.begin();
 			std::vector<TAIR>::iterator itTAIR = VTAIR.begin();
 			std::string sResult = "";
 			int imax = 0;
 			TAIR::SignType sign = Token::DefSign ;
 
-			for(; itTAIR != VTAIR.end(); itTAIR ++) {
+			for(; itTAIR != VTAIR.end(); itTAIR ++) { //获取最长可接受Token
 				int i = 0;
 				it = strInput.begin();
 				std::string sTemp = "";
